@@ -1,9 +1,6 @@
 //Define variable 'cards' containing an array
 var cards = ['queen', 'queen', 'king', 'king'];
 
-//call Fisher-Yates function to shuffle cards in the array
-fisherYates(cards);
-
 //Define an empty array to hold the cards in play
 var cardsInPlay = [];
 
@@ -12,7 +9,9 @@ var board = document.getElementById('game-board');
 
 //Function to populate the game board with cards
 var createBoard = function() {
-      //iterate through the cards array
+  //call Fisher-Yates function to shuffle cards in the array
+  fisherYates(cards);
+  //iterate through the cards array
   for (var i = 0; i < cards.length; i++) {
     //create new div for each card;
     var cardElement = document.createElement('div');
@@ -53,10 +52,17 @@ var isTwoCards = function() {
   }
 };
 
+//clear cards from the board and reset to play again
+var resetBoard = function() {
+    board.innerHTML = '';
+    createBoard();
+};
+
 //check for match between clicked cards
 var isMatch = function() {
   if (cardsInPlay[0].getAttribute('data-card') === cardsInPlay[1].getAttribute('data-card')) {
     alert('You found a match!');
+    resetBoard();
   } else {
     alert('Try again.');
   }
