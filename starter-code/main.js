@@ -1,8 +1,67 @@
 //Confirm that JS is working in web console
-console.log("JS file is connected to HTML! Woo!")
+// alert('JS file is connected to HTML! Woo!')
 
-//Create variables for four cards and assign values 
-var cardOne = "queen";
-var cardTwo = "king";
-var cardThree = "queen";
-var cardFour = "king";
+//Define variable 'cards' containing an array
+var cards = ['queen', 'queen', 'king', 'king'];
+
+//Define an empty array to hold the cards in play
+var cardsInPlay = [];
+
+//Define a variable for the game board
+var board = document.getElementById('game-board');
+
+//Function to populate the game board with cards
+var createBoard = function() {
+      //iterate through the cards array
+  for (var i = 0; i < cards.length; i++) {
+    //create new div for each card;
+    var cardElement = document.createElement('div');
+    //assign the 'card' class to each new card
+    cardElement.className = 'card';
+    //set card's data-card to an element of the array (king or queen)
+    cardElement.setAttribute('data-card', cards[i]);
+    //add new cards to the game board div
+    board.appendChild(cardElement);
+    cardElement.addEventListener('click', flipCard);
+    //execute isTwoCards function when a card is clicked
+    cardElement.addEventListener('click', isTwoCards);
+  }
+
+};
+
+var flipCard = function() {
+  if (this.getAttribute('data-card') === 'queen') {
+    this.innerHTML = '<img src="queen.png" alt="Queen" />';
+  } else {
+    this.innerHTML = '<img src="king.png" alt="King" />';
+  }
+};
+
+var isTwoCards = function() {
+  //add clicked card to an array of cards in play
+  cardsInPlay.push(this);
+//check for match when two cards are clicked
+  if (cardsInPlay.length === 2) {
+    //delay alert until after card image is displayed
+    setTimeout(function() { 
+      isMatch(cardsInPlay);
+
+      //clear cards in play for next try
+      cardsInPlay[0].innerHTML = '';
+      cardsInPlay[1].innerHTML = '';
+      cardsInPlay = [];
+    }, 100);
+  }
+};
+
+var isMatch = function() {
+  if (cardsInPlay[0].getAttribute('data-card') === cardsInPlay[1].getAttribute('data-card')) {
+    alert('You found a match!');
+  } else {
+    alert('Try again.');
+  }
+
+};
+
+createBoard();
+

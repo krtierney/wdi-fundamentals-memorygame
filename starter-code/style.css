@@ -41,6 +41,11 @@ h2 {
   color: #ffd700;
 }
 
+p {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 /*Styling for board and cards*/
 
 .board {
@@ -51,14 +56,12 @@ h2 {
   margin: 0 30%;
 }
 .card {
-  height: 200px;
+  height: 209px;
   width: 150px;
-  background-color: rgb(255,255,0);
-  border-radius: 10px;
-  border: 1px #000 solid;
-  box-sizing: border-box;
+  background-image: url('card.png');
+  background-size: cover;
   float: left;
-  margin: 8%
+  margin: 5% 8%;
 }
 
 footer {
@@ -67,4 +70,8 @@ footer {
 }
 .name {
   color: #ff0000;
+}
+
+img {
+  width: 150px;
 }
