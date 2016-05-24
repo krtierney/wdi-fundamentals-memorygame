@@ -1,5 +1,5 @@
 //Define variable 'cards' containing an array
-var cards = ['queen', 'queen', 'king', 'king'];
+var cards = ['queen', 'queen', 'king', 'king', 'jack', 'jack'];
 
 //Define an empty array to hold the cards in play
 var cardsInPlay = [];
@@ -31,8 +31,10 @@ var createBoard = function() {
 var flipCard = function() {
   if (this.getAttribute('data-card') === 'queen') {
     this.innerHTML = '<img src="queen.png" alt="Queen" />';
-  } else {
+  } else if (this.getAttribute('data-card') === 'king') {
     this.innerHTML = '<img src="king.png" alt="King" />';
+  } else {
+    this.innerHTML = '<img src="jack.png" alt="Jack" />';
   }
 };
 

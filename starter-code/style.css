@@ -1,29 +1,28 @@
-/* This is a multi-line
-comment. Add your CSS code
-from Unit 1 - 5 below  */
-
-/*Center text on page*/
-h1, h2, p, footer {
-  text-align: center;
+/*reset margins*/
+* {
+  margin: 0;
 }
 
-/*Styling for navigation*/
-nav {
-  background-color: #808080;
-  margin: 0 auto;
+/* html, body, .wrapper resets for sticky footer */
+html, body {
+  height: 100%;
 }
+
+.wrapper {
+  min-height: 100%;
+  margin: 0 auto -2em;
+  background-color: rgba(255,225,184,.6);
+}
+
 a {
-  background-color: #ffbf00;
-  color: #fff;
-  padding: 35px;
-  display: block;
-  float: left;
+  text-decoration: none;
+  color: rgba(255,255,184, 1);
 }
 a:hover {
-  background-color: #ee5f3c;
+  color: #ee5f3c;
 }
 
-/*Hack to clear floats*/
+/* Hack to clear floats */
 .clearfix:after {
     visibility: hidden;
     display: block;
@@ -33,45 +32,69 @@ a:hover {
     height: 0;
 }
 
-
 h1 {
-  color: rgb(2,132,130);
+  color: rgb(195,55,55);
+  font-family: 'Sansita One', cursive;
+  font-size: 5em;
+  text-shadow: 2px 2px #FF5353;
+  padding: 5% 10% 0 3%;
 }
+
 h2 {
-  color: #ffd700;
+  color: rgb(44,94,23);
+  font-family: 'Verdana', 'Geneva', sans-serif;
+  font-size: 1em;
+  padding: 1% 10% 0 4%;
 }
 
 p {
-  max-width: 600px;
-  margin: 0 auto;
-}
+  max-width: 200px;
+  float: left;
+  font-family: 'Verdana', 'Geneva', sans-serif;
+  font-size: .8em;
+  line-height: 1.4em;
+  padding: 1% 2% 0 4%;
+  }
 
-/*Styling for board and cards*/
-
+/* Styling for board and cards */
 .board {
   height: 50%;
   width: 50%;
-  display: inline-block;
+  display: inline-block; 
   float: left;
-  margin: 0 30%;
+  background-color: rgb(255,83,83);
+  border-radius: 15px;
+  padding: 2% 0 2% 3%;
+  margin-top: -7%;
+  margin-left: 7%;
 }
+
 .card {
   height: 209px;
   width: 150px;
   background-image: url('card.png');
   background-size: cover;
   float: left;
-  margin: 5% 8%;
-}
-
-footer {
-  background-color: rgba(0,0,0,.3);
-  clear: both;
-}
-.name {
-  color: #ff0000;
+  margin: 5% 3%;
 }
 
 img {
   width: 150px;
+}
+
+footer {
+  background-color: rgba(44,94,23,.8);
+  color: rgba(255,255,184, .8);
+  font-family: 'Verdana', 'Geneva', sans-serif; 
+  font-size: .9em;
+  padding: .5em;
+  text-align: center;
+  clear: both;
+  height: 2em;
+  margin: 0;
+}
+
+/* Needs to be the same height as footer to stick to bottom */
+.push {
+  height: 2em;
 }
