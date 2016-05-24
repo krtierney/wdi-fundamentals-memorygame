@@ -14,22 +14,13 @@ html, body {
   background-color: rgba(255,225,184,.4);
 }
 
+/* Text and link styling */ 
 a {
   text-decoration: none;
   color: rgba(255,255,184, 1);
 }
 a:hover {
   color: #ee5f3c;
-}
-
-/* Hack to clear floats */
-.clearfix:after {
-    visibility: hidden;
-    display: block;
-    font-size: 0;
-    content: " ";
-    clear: both;
-    height: 0;
 }
 
 h1 {
@@ -66,7 +57,7 @@ p {
   padding: 1% 2% 0 4%;
   }
 
-/* Styling for board and cards */
+/* Styling for game board, score board and cards */
 .board {
   height: 50%;
   width: 50%;
@@ -87,6 +78,7 @@ p {
   float: left;
   margin: 5% 3%;
 }
+
 .score {
   float: left;
   background-color: rgba(255,225,184,1);
