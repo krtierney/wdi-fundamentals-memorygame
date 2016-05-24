@@ -60,10 +60,23 @@ var resetBoard = function() {
     createBoard();
 };
 
+//Define a variable for the score board
+var scoreBoard = document.getElementById('score');
+
+//Define a variable to track player score
+var playerScore = 0;
+
+//Increase score by 1 and display
+var playerWin = function() {
+  playerScore = playerScore + 1;
+  scoreBoard.innerHTML = '<h3>Score</h3><h2> ' + playerScore + '</h2>';
+};
+
 //check for match between clicked cards
 var isMatch = function() {
   if (cardsInPlay[0].getAttribute('data-card') === cardsInPlay[1].getAttribute('data-card')) {
     alert('You found a match!');
+    playerWin();
     resetBoard();
   } else {
     alert('Try again.');
